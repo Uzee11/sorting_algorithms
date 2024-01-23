@@ -54,4 +54,12 @@ void insertion_sort_list(listint_t **list);
  */
 void selection_sort(int *array, size_t size);
 
+/**
+ * quick_sort - Sorts an array of integers in ascending order
+ *              using the Quick sort algorithm (Lomuto partition scheme)
+ * @array: The array to be sorted
+ * @size: Number of elements in @array
+ */
+void quick_sort(int *array, size_t size);
+
 #endif /* SORT_H */
