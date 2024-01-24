@@ -6,7 +6,8 @@
  *                       using the Insertion sort algorithm.
  *
  * @list: Pointer to the head of the doubly linked list
- */
+*/
+/* uzees version */
 void insertion_sort_list(listint_t **list)
 {
     listint_t *lead, *follow, *new, *temp;
