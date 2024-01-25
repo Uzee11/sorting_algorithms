@@ -1,36 +1,48 @@
 #include "sort.h"
 
 /**
- * selection_sort - Sorts an array of integers in ascending order
- *                  using the Selection sort algorithm
- * @array: The array to be sorted
- * @size: Number of elements in @array
+ * selection_sort - sorts an array of integers using a selction sort
+ * algorithm
+ * @array: array of integers to be sorted
+ * @size: amount of elements in array
  */
+
+/**
+ * struct listint_s - Doubly linked list node
+ *
+ * @n: Integer stored in the node
+ * @prev: Pointer to the previous element of the list
+ * @next: Pointer to the next element of the list
+ */
+/*uzee11 version */
 void selection_sort(int *array, size_t size)
 {
-    if (array == NULL || size < 2)
-        return;
+	int i, j, min_j, temp, n = (int)size;
 
-    size_t i, j, min_idx;
+	if (!array || size < 2)
+		return;
 
-    for (i = 0; i < size - 1; i++)
-    {
-        min_idx = i;
-
-        for (j = i + 1; j < size; j++)
-        {
-            if (array[j] < array[min_idx])
-                min_idx = j;
-        }
-
-        if (min_idx != i)
-        {
-            /* Swap elements */
-            int temp = array[i];
-            array[i] = array[min_idx];
-            array[min_idx] = temp;
-
-            print_array(array, size);
-        }
-    }
+	/* at every position in the n-member array */
+	for (i = 0; i < n - 1; i++)
+	{
+		/* scan from that position to the end, */
+		min_j = i;
+		for (j = i + 1; j < n; j++)
+		{
+			/* determine the minimum value in that range */
+			if (array[j] < array[min_j])
+			{
+				min_j = j;
+			}
+		}
+		/* and if it is lower than the value at start of range, */
+		/* swap them */
+		if (min_j != i)
+		{
+			temp = array[i];
+			array[i] = array[min_j];
+			array[min_j] = temp;
+			print_array(array, size);
+		}
+	}
 }
